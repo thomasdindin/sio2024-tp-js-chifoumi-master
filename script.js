@@ -4,6 +4,7 @@ let boutonsTexte = ["PIERRE", "FEUILLE", "CISEAUX"];
 let scoreJoueur = 0;
 let scoreOrdi = 0;
 let scores = document.querySelectorAll("#scores")
+let SVG = ['<i class="fa-regular fa-hand-back-fist"></i>', '<i class="fa-regular fa-hand"></i>','<i class="fa-regular fa-hand-scissors"></i>'];
 
 // La suite du script constitue en la définition des fonctions utilisées dans le jeu
 
@@ -41,6 +42,7 @@ function commencerPartie() {
     statutJeu.textContent = "Choisissez !"
     boutons.forEach((bouton, index) => {
         bouton.textContent = boutonsTexte[index]
+        bouton.innerHTML += SVG[index];
         bouton.addEventListener("click", finirPartie)
     })
 }
